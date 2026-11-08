@@ -12,6 +12,9 @@ def test_sign_in_to_gmail(page: Page):
     expect(signInPage.signInButton).to_be_visible() 
 
     signInPage.clickOnSignInButton()
+
+    assert  TEST_EMAIL_GITHUB is not None
+    assert  TEST_PASSWORD_GITHUB is not None
     signInPage.emailField.fill(TEST_EMAIL_GITHUB)
     signInPage.passwordField.fill(TEST_PASSWORD_GITHUB)
     signInPage.signInWithCredentials.click()
